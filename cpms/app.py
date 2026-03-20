@@ -2,6 +2,7 @@ from flask import Flask
 from config import Config
 from db import db
 from routes.main import main_bp
+from routes.auth import auth_bp
 
 
 def create_app():
@@ -14,6 +15,11 @@ def create_app():
 
     # Register blueprints
     app.register_blueprint(main_bp)
+    app.register_blueprint(auth_bp)
+
+    # Import models so db.create_all() can detect them
+    import models.student  # noqa: F401
+    import models.admin  # noqa: F401
 
     # Create all database tables
     with app.app_context():
