@@ -453,7 +453,9 @@ body.admin-job,
 body.admin-applications,
 body.student-dashboard,
 body.student-jobs,
-body.student-applications {
+body.student-applications,
+body.student-interviews,
+body.admin-schedule {
     /* Pages can override background via these classes if needed */
 }
 

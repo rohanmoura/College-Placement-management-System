@@ -4,6 +4,7 @@ from db import db
 from models.student import Student
 from models.job_posting import JobPosting
 from models.job_application import JobApplication
+from models.interview_schedule import InterviewSchedule
 
 student_bp = Blueprint("student", __name__, url_prefix="/student")
 
@@ -110,3 +111,23 @@ def applications():
     )
 
     return render_template("student/applications.html", applications=my_applications)
+
+
+# ──────────────────────────────────────────────
+# View My Interviews
+# ──────────────────────────────────────────────
+@student_bp.route("/interviews")
+@login_required
+def interviews():
+    student_id = session["student_id"]
+
+    my_interviews = (
+        db.session.query(InterviewSchedule)
+        .join(InterviewSchedule.job)
+        .join(InterviewSchedule.company)
+        .filter(InterviewSchedule.student_id == student_id)
+        .order_by(InterviewSchedule.interview_date.desc())
+        .all()
+    )
+
+    return render_template("student/interviews.html", interviews=my_interviews)

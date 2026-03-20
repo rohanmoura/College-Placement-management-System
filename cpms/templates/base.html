@@ -16,6 +16,7 @@
                 <a href="{{ url_for('student.dashboard') }}" class="{% if '/student/dashboard' in request.path %}active{% endif %}">Dashboard</a>
                 <a href="{{ url_for('student.jobs') }}" class="{% if '/student/jobs' in request.path %}active{% endif %}">Jobs</a>
                 <a href="{{ url_for('student.applications') }}" class="{% if '/student/applications' in request.path %}active{% endif %}">My Applications</a>
+                <a href="{{ url_for('student.interviews') }}" class="{% if '/student/interviews' in request.path %}active{% endif %}">Interviews</a>
                 <a href="{{ url_for('auth.logout') }}">Logout</a>
 
             {% elif session.get('admin_id') %}
@@ -23,6 +24,7 @@
                 <a href="{{ url_for('admin.add_company') }}" class="{% if '/admin/company' in request.path %}active{% endif %}">Add Company</a>
                 <a href="{{ url_for('admin.add_job') }}" class="{% if '/admin/job' in request.path %}active{% endif %}">Add Job</a>
                 <a href="{{ url_for('admin.applications') }}" class="{% if '/admin/applications' in request.path %}active{% endif %}">Applications</a>
+                <a href="{{ url_for('admin.schedule_interview') }}" class="{% if '/admin/schedule' in request.path %}active{% endif %}">Schedule</a>
                 <a href="{{ url_for('auth.logout') }}">Logout</a>
 
             {% else %}
