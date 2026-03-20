@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard - CPMS{% endblock %}
+{% block body_class %}admin-dashboard{% endblock %}
+
+{% block content %}
+<h2>Admin Dashboard</h2>
+
+<div class="stat-grid">
+    <div class="stat-card">
+        <span class="stat-number">{{ total_students }}</span>
+        <span class="stat-label">Students</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-number">{{ total_companies }}</span>
+        <span class="stat-label">Companies</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-number">{{ total_jobs }}</span>
+        <span class="stat-label">Job Postings</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-number">{{ total_applications }}</span>
+        <span class="stat-label">Applications</span>
+    </div>
+</div>
+
+<div class="action-links">
+    <a href="{{ url_for('admin.add_company') }}" class="btn-link">Add Company</a>
+    <a href="{{ url_for('admin.add_job') }}" class="btn-link">Add Job</a>
+    <a href="{{ url_for('admin.applications') }}" class="btn-link">View Applications</a>
+</div>
+{% endblock %}

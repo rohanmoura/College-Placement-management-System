@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block title %}My Applications - CPMS{% endblock %}
+{% block body_class %}student-applications{% endblock %}
 
 {% block content %}
 <h2>My Applications</h2>
@@ -30,10 +31,10 @@
     </tbody>
 </table>
 {% else %}
-<p style="text-align: center; color: #888; margin-top: 30px;">You haven't applied for any jobs yet.</p>
+<p class="links">You haven't applied for any jobs yet.</p>
 {% endif %}
 
-<div style="margin-top: 20px; text-align: center;">
+<div class="action-links">
     <a href="{{ url_for('student.jobs') }}" class="btn-link">Browse Jobs</a>
 </div>
 {% endblock %}

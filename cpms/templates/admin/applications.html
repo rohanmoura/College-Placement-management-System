@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}All Applications - CPMS{% endblock %}
+{% block body_class %}admin-applications{% endblock %}
+
+{% block content %}
+<h2>All Applications</h2>
+
+{% if applications %}
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Student</th>
+            <th>Job Title</th>
+            <th>Company</th>
+            <th>Applied On</th>
+            <th>Status</th>
+            <th>Update</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for app in applications %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ app.student.name }}</td>
+            <td>{{ app.job.job_title }}</td>
+            <td>{{ app.job.company.company_name }}</td>
+            <td>{{ app.apply_date }}</td>
+            <td>
+                <span class="status status-{{ app.status | lower }}">{{ app.status }}</span>
+            </td>
+            <td>
+                <form method="POST" action="{{ url_for('admin.update_status', application_id=app.application_id) }}" class="inline-form">
+                    <select name="status">
+                        <option value="Applied" {% if app.status == 'Applied' %}selected{% endif %}>Applied</option>
+                        <option value="Shortlisted" {% if app.status == 'Shortlisted' %}selected{% endif %}>Shortlisted</option>
+                        <option value="Selected" {% if app.status == 'Selected' %}selected{% endif %}>Selected</option>
+                        <option value="Rejected" {% if app.status == 'Rejected' %}selected{% endif %}>Rejected</option>
+                    </select>
+                    <button type="submit">Save</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p class="links">No applications yet.</p>
+{% endif %}
+{% endblock %}
