@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Available Jobs - CPMS{% endblock %}
+
+{% block content %}
+<h2>Available Jobs</h2>
+
+{% if jobs %}
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Job Title</th>
+            <th>Company</th>
+            <th>Salary</th>
+            <th>Deadline</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for job in jobs %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ job.job_title }}</td>
+            <td>{{ job.company.company_name }}</td>
+            <td>{{ job.salary or "Not disclosed" }}</td>
+            <td>{{ job.deadline }}</td>
+            <td>
+                <a href="{{ url_for('student.apply', job_id=job.job_id) }}" class="btn-small">Apply</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p style="text-align: center; color: #888; margin-top: 30px;">No jobs available right now.</p>
+{% endif %}
+{% endblock %}
