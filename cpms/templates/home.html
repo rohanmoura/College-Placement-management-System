@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}CPMS - College Placement Management System{% endblock %}
+{% block body_class %}home-page{% endblock %}
+
+{% block content %}
+<h2>College Placement Management System</h2>
+
+<p class="home-description">
+    A streamlined platform to connect students with top recruiters.
+    Browse job postings, submit applications, and track your placement
+    journey — all in one place.
+</p>
+
+<div class="action-links">
+    <a href="{{ url_for('auth.login') }}" class="btn-link">Student Login</a>
+    <a href="{{ url_for('auth.admin_login') }}" class="btn-link">Admin Login</a>
+    <a href="{{ url_for('auth.register') }}" class="btn-link">Register</a>
+</div>
+{% endblock %}
