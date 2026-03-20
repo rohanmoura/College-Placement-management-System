@@ -4,6 +4,7 @@ from db import db
 from routes.main import main_bp
 from routes.auth import auth_bp
 from routes.student import student_bp
+from routes.admin import admin_bp
 
 
 def create_app():
@@ -18,6 +19,7 @@ def create_app():
     app.register_blueprint(main_bp)
     app.register_blueprint(auth_bp)
     app.register_blueprint(student_bp)
+    app.register_blueprint(admin_bp)
 
     # Import models so db.create_all() can detect them
     import models.student  # noqa: F401

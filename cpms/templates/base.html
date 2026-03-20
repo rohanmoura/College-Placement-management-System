@@ -4,46 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}CPMS{% endblock %}</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
-    />
-  </head>
-  <body class="{% block body_class %}{% endblock %}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="{% block body_class %}{% endblock %}">
     <nav class="navbar">
-      <span class="brand">CPMS</span>
-      <div class="nav-links">
-        <a href="{{ url_for('main.home') }}">Home</a>
-        {% if session.get('student_id') %}
-        <a
-          href="{{ url_for('student.dashboard') }}"
-          class="{% if request.path == '/student/dashboard' %}active{% endif %}"
-        >
-          Dashboard
-        </a>
+        <span class="brand">CPMS</span>
+        <div class="nav-links">
+            <a href="{{ url_for('main.home') }}" class="{% if request.path == '/' %}active{% endif %}">Home</a>
 
-        <a
-          href="{{ url_for('student.jobs') }}"
-          class="{% if request.path == '/student/jobs' %}active{% endif %}"
-        >
-          Jobs
-        </a>
+            {% if session.get('student_id') %}
+                <a href="{{ url_for('student.dashboard') }}" class="{% if '/student/dashboard' in request.path %}active{% endif %}">Dashboard</a>
+                <a href="{{ url_for('student.jobs') }}" class="{% if '/student/jobs' in request.path %}active{% endif %}">Jobs</a>
+                <a href="{{ url_for('student.applications') }}" class="{% if '/student/applications' in request.path %}active{% endif %}">My Applications</a>
+                <a href="{{ url_for('auth.logout') }}">Logout</a>
 
-        <a
-          href="{{ url_for('student.applications') }}"
-          class="{% if request.path == '/student/applications' %}active{% endif %}"
-        >
-          My Applications
-        </a>
-        <a href="{{ url_for('auth.logout') }}">Logout</a>
-        {% elif session.get('admin_id') %}
-        <a href="{{ url_for('auth.logout') }}">Logout</a>
-        {% else %}
-        <a href="{{ url_for('auth.login') }}">Student Login</a>
-        <a href="{{ url_for('auth.admin_login') }}">Admin Login</a>
-        <a href="{{ url_for('auth.register') }}">Register</a>
-        {% endif %}
-      </div>
+            {% elif session.get('admin_id') %}
+                <a href="{{ url_for('admin.dashboard') }}" class="{% if '/admin/dashboard' in request.path %}active{% endif %}">Dashboard</a>
+                <a href="{{ url_for('admin.add_company') }}" class="{% if '/admin/company' in request.path %}active{% endif %}">Add Company</a>
+                <a href="{{ url_for('admin.add_job') }}" class="{% if '/admin/job' in request.path %}active{% endif %}">Add Job</a>
+                <a href="{{ url_for('admin.applications') }}" class="{% if '/admin/applications' in request.path %}active{% endif %}">Applications</a>
+                <a href="{{ url_for('auth.logout') }}">Logout</a>
+
+            {% else %}
+                <a href="{{ url_for('auth.login') }}" class="{% if '/login' in request.path and '/admin' not in request.path %}active{% endif %}">Student Login</a>
+                <a href="{{ url_for('auth.admin_login') }}" class="{% if '/admin/login' in request.path %}active{% endif %}">Admin Login</a>
+                <a href="{{ url_for('auth.register') }}" class="{% if '/register' in request.path %}active{% endif %}">Register</a>
+            {% endif %}
+        </div>
     </nav>
 
     <div class="container">
