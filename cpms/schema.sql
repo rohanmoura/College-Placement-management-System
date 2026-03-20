@@ -30,7 +30,7 @@ CREATE TABLE student (
 CREATE TABLE admin (
     admin_id    SERIAL        PRIMARY KEY,
     username    VARCHAR(50)   UNIQUE NOT NULL,
-    password    VARCHAR(100)  NOT NULL,
+    password    VARCHAR(255)  NOT NULL,
     role        VARCHAR(30)   DEFAULT 'Admin',
     email       VARCHAR(100)  UNIQUE,
     contact     VARCHAR(15)   UNIQUE
