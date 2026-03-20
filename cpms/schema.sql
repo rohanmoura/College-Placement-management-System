@@ -3,8 +3,8 @@
 -- PostgreSQL Database Schema
 -- ============================================
 
--- Create the database
-CREATE DATABASE cpms_db;
+-- -- Create the database
+-- CREATE DATABASE cpms_db;
 
 -- Connect to the database
 -- \c cpms_db;
