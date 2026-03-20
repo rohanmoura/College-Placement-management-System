@@ -1,0 +1,319 @@
+/* ============================================
+   College Placement Management System (CPMS)
+   Global Stylesheet
+   ============================================ */
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+
+    /* Background image with overlay */
+    background:
+        linear-gradient(rgba(44, 62, 80, 0.55), rgba(44, 62, 80, 0.55)),
+        url("../images/bg.jpg") center / cover no-repeat fixed;
+    background-color: #2c3e50;  /* fallback when no image */
+}
+
+a { color: #2c3e50; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+    background: rgba(26, 37, 47, 0.95);
+    padding: 16px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .brand {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.navbar .nav-links a {
+    color: #dce1e6;
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 14px;
+    padding: 6px 0;
+    transition: color 0.2s;
+}
+
+.navbar .nav-links a:hover {
+    color: #fff;
+    border-bottom: 2px solid #3498db;
+}
+
+/* ---------- Page Container ---------- */
+.container {
+    max-width: 820px;
+    margin: 50px auto;
+    padding: 35px 40px;
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 28px;
+    color: #2c3e50;
+    font-size: 24px;
+}
+
+/* ---------- Flash Messages ---------- */
+.flash {
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    border-left: 4px solid transparent;
+}
+
+.flash.success {
+    background: #d4edda;
+    color: #155724;
+    border-left-color: #28a745;
+}
+
+.flash.danger {
+    background: #f8d7da;
+    color: #721c24;
+    border-left-color: #dc3545;
+}
+
+.flash.info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border-left-color: #17a2b8;
+}
+
+/* ---------- Forms ---------- */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #fdfdfd;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+    background: #1a252f;
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-small {
+    display: inline-block;
+    padding: 7px 16px;
+    background: #27ae60;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 13px;
+    transition: background 0.2s;
+}
+
+.btn-small:hover {
+    background: #219150;
+    color: #fff;
+}
+
+.btn-danger {
+    background: #e74c3c;
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 10px 22px;
+    margin: 5px;
+    background: #2c3e50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-link:hover {
+    background: #1a252f;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+/* ---------- Links Section ---------- */
+.links {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+    color: #666;
+}
+
+.links a {
+    color: #2c3e50;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Data Table ---------- */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.data-table th,
+.data-table td {
+    padding: 11px 14px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.data-table th {
+    background: #2c3e50;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.data-table tbody tr {
+    transition: background 0.15s;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.data-table tbody tr:hover {
+    background: #eaf2f8;
+}
+
+/* ---------- Info Table (Key-Value) ---------- */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table th,
+.info-table td {
+    padding: 12px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-table th {
+    background: #f4f6f9;
+    text-align: left;
+    width: 180px;
+    color: #555;
+    font-weight: 600;
+}
+
+.info-table td {
+    color: #333;
+}
+
+/* ---------- Status Badges ---------- */
+.status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.status-applied {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.status-shortlisted {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-selected {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-rejected {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* ---------- Footer Spacing ---------- */
+.container {
+    margin-bottom: 60px;
+}
