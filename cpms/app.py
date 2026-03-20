@@ -27,6 +27,7 @@ def create_app():
     import models.company  # noqa: F401
     import models.job_posting  # noqa: F401
     import models.job_application  # noqa: F401
+    import models.interview_schedule  # noqa: F401
 
     # Create all database tables
     with app.app_context():

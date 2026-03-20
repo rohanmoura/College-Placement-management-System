@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Schedule Interview - CPMS{% endblock %}
+{% block body_class %}admin-schedule{% endblock %}
+
+{% block content %}
+<h2>Schedule Interview</h2>
+
+<form method="POST" action="{{ url_for('admin.schedule_interview') }}">
+    <div class="form-group">
+        <label for="student_id">Select Student</label>
+        <select id="student_id" name="student_id" required>
+            <option value="">-- Select Student --</option>
+            {% for student in students %}
+                <option value="{{ student.student_id }}">{{ student.name }} ({{ student.email }})</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="job_id">Select Job</label>
+        <select id="job_id" name="job_id" required>
+            <option value="">-- Select Job --</option>
+            {% for job in jobs %}
+                <option value="{{ job.job_id }}">{{ job.job_title }} — {{ job.company.company_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="interview_date">Interview Date</label>
+        <input type="date" id="interview_date" name="interview_date" required>
+    </div>
+
+    <div class="form-group">
+        <label for="interview_time">Interview Time</label>
+        <input type="time" id="interview_time" name="interview_time" required>
+    </div>
+
+    <button type="submit" class="btn">Schedule Interview</button>
+</form>
+{% endblock %}

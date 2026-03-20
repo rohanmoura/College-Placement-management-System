@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}My Interviews - CPMS{% endblock %}
+{% block body_class %}student-interviews{% endblock %}
+
+{% block content %}
+<h2>My Interviews</h2>
+
+{% if interviews %}
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Job Title</th>
+            <th>Company</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for interview in interviews %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ interview.job.job_title }}</td>
+            <td>{{ interview.company.company_name }}</td>
+            <td>{{ interview.interview_date }}</td>
+            <td>{{ interview.interview_time }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p class="links">No interviews scheduled yet.</p>
+{% endif %}
+{% endblock %}

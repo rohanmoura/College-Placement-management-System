@@ -5,6 +5,7 @@ from models.student import Student
 from models.company import Company
 from models.job_posting import JobPosting
 from models.job_application import JobApplication
+from models.interview_schedule import InterviewSchedule
 
 admin_bp = Blueprint("admin", __name__, url_prefix="/admin")
 
@@ -141,3 +142,42 @@ def update_status(application_id):
 
     flash(f"Status updated to '{new_status}'.", "success")
     return redirect(url_for("admin.applications"))
+
+
+# ──────────────────────────────────────────────
+# Schedule Interview
+# ──────────────────────────────────────────────
+@admin_bp.route("/schedule", methods=["GET", "POST"])
+@admin_required
+def schedule_interview():
+    students = Student.query.order_by(Student.name).all()
+    jobs = (
+        db.session.query(JobPosting)
+        .join(JobPosting.company)
+        .order_by(JobPosting.job_title)
+        .all()
+    )
+
+    if request.method == "POST":
+        student_id = request.form["student_id"]
+        job_id = request.form["job_id"]
+        interview_date = request.form["interview_date"]
+        interview_time = request.form["interview_time"]
+
+        # Get company_id from the selected job
+        job = JobPosting.query.get(job_id)
+
+        new_interview = InterviewSchedule(
+            student_id=student_id,
+            company_id=job.company_id,
+            job_id=job_id,
+            interview_date=interview_date,
+            interview_time=interview_time,
+        )
+        db.session.add(new_interview)
+        db.session.commit()
+
+        flash("Interview scheduled successfully!", "success")
+        return redirect(url_for("admin.dashboard"))
+
+    return render_template("admin/schedule_interview.html", students=students, jobs=jobs)
