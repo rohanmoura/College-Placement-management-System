@@ -3,6 +3,7 @@ from config import Config
 from db import db
 from routes.main import main_bp
 from routes.auth import auth_bp
+from routes.student import student_bp
 
 
 def create_app():
@@ -16,10 +17,14 @@ def create_app():
     # Register blueprints
     app.register_blueprint(main_bp)
     app.register_blueprint(auth_bp)
+    app.register_blueprint(student_bp)
 
     # Import models so db.create_all() can detect them
     import models.student  # noqa: F401
     import models.admin  # noqa: F401
+    import models.company  # noqa: F401
+    import models.job_posting  # noqa: F401
+    import models.job_application  # noqa: F401
 
     # Create all database tables
     with app.app_context():
