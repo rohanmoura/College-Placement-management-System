@@ -1,41 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}CPMS{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body class="{% block body_class %}{% endblock %}">
     <nav class="navbar">
-        <span class="brand">CPMS</span>
-        <div class="nav-links">
-            <a href="{{ url_for('main.home') }}">Home</a>
-            {% if session.get('student_id') %}
-                <a href="{{ url_for('student.dashboard') }}">Dashboard</a>
-                <a href="{{ url_for('student.jobs') }}">Jobs</a>
-                <a href="{{ url_for('student.applications') }}">My Applications</a>
-                <a href="{{ url_for('auth.logout') }}">Logout</a>
-            {% elif session.get('admin_id') %}
-                <a href="{{ url_for('auth.logout') }}">Logout</a>
-            {% else %}
-                <a href="{{ url_for('auth.login') }}">Student Login</a>
-                <a href="{{ url_for('auth.admin_login') }}">Admin Login</a>
-                <a href="{{ url_for('auth.register') }}">Register</a>
-            {% endif %}
-        </div>
+      <span class="brand">CPMS</span>
+      <div class="nav-links">
+        <a href="{{ url_for('main.home') }}">Home</a>
+        {% if session.get('student_id') %}
+        <a
+          href="{{ url_for('student.dashboard') }}"
+          class="{% if request.path == '/student/dashboard' %}active{% endif %}"
+        >
+          Dashboard
+        </a>
+
+        <a
+          href="{{ url_for('student.jobs') }}"
+          class="{% if request.path == '/student/jobs' %}active{% endif %}"
+        >
+          Jobs
+        </a>
+
+        <a
+          href="{{ url_for('student.applications') }}"
+          class="{% if request.path == '/student/applications' %}active{% endif %}"
+        >
+          My Applications
+        </a>
+        <a href="{{ url_for('auth.logout') }}">Logout</a>
+        {% elif session.get('admin_id') %}
+        <a href="{{ url_for('auth.logout') }}">Logout</a>
+        {% else %}
+        <a href="{{ url_for('auth.login') }}">Student Login</a>
+        <a href="{{ url_for('auth.admin_login') }}">Admin Login</a>
+        <a href="{{ url_for('auth.register') }}">Register</a>
+        {% endif %}
+      </div>
     </nav>
 
     <div class="container">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="flash {{ category }}">{{ message }}</div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-
-        {% block content %}{% endblock %}
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock %}
     </div>
-</body>
+  </body>
 </html>
