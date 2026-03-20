@@ -49,7 +49,24 @@ body.student-applications {
   background: url("../images/applications.jpg") center/cover no-repeat fixed;
 }
 
-a {
+body.admin-dashboard {
+  background: url("../images/admin-dashboard.jpg") center/cover no-repeat fixed;
+}
+
+body.admin-company {
+  background: url("../images/admin-company.jpg") center/cover no-repeat fixed;
+}
+
+body.admin-job {
+  background: url("../images/admin-job.jpg") center/cover no-repeat fixed;
+}
+
+body.admin-applications {
+  background: url("../images/admin-applications.jpg") center/cover no-repeat fixed;
+}
+
+
+*/ a {
   color: #2c3e50;
 }
 
@@ -347,87 +364,76 @@ h2 {
 
 /* ---------- Active Nav Link ---------- */
 .navbar .nav-links a.active {
-    color: #fff;
-    border-bottom: 2px solid #3498db;
+  color: #fff;
+  border-bottom: 2px solid #3498db;
 }
 
 /* ---------- Stat Cards (Dashboard) ---------- */
 .stat-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-    margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
 }
 
 .stat-card {
-    background: #f4f6f9;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    border-left: 4px solid #2c3e50;
+  background: #f4f6f9;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  border-left: 4px solid #2c3e50;
 }
 
 .stat-card .stat-number {
-    font-size: 32px;
-    font-weight: bold;
-    color: #2c3e50;
-    display: block;
+  font-size: 32px;
+  font-weight: bold;
+  color: #2c3e50;
+  display: block;
 }
 
 .stat-card .stat-label {
-    font-size: 13px;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-top: 4px;
-    display: block;
+  font-size: 13px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+  display: block;
 }
 
 /* ---------- Inline Form (status update) ---------- */
 .inline-form {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .inline-form select {
-    padding: 5px 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 13px;
-    background: #fdfdfd;
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  background: #fdfdfd;
 }
 
 .inline-form button {
-    padding: 5px 12px;
-    background: #2c3e50;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: background 0.2s;
+  padding: 5px 12px;
+  background: #2c3e50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
 .inline-form button:hover {
-    background: #1a252f;
+  background: #1a252f;
 }
 
 /* ---------- Action Links ---------- */
 .action-links {
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* ---------- Page Body Classes ---------- */
-body.admin-dashboard,
-body.admin-company,
-body.admin-job,
-body.admin-applications,
-body.student-dashboard,
-body.student-jobs,
-body.student-applications {
-    /* Pages can override background via these classes if needed */
+  text-align: center;
+  margin-top: 20px;
 }
 
 /* ---------- Footer Spacing ---------- */
@@ -436,7 +442,7 @@ body.student-applications {
 }
 
 .nav-links a.active {
-    color: #fff;
-    border-bottom: 2px solid #3498db;
-    font-weight: 600;
+  color: #fff;
+  border-bottom: 2px solid #3498db;
+  font-weight: 600;
 }
