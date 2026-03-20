@@ -71,6 +71,13 @@ body.home-page {
   background: url("../images/home.jpg") center/cover no-repeat fixed;
 }
 
+body.student-interviews {
+    background: url("../images/interviews.jpg") center/cover no-repeat fixed;
+}
+body.admin-schedule {
+    background: url("../images/schedule.jpg") center/cover no-repeat fixed;
+}
+
 */ a {
   color: #2c3e50;
 }
@@ -443,25 +450,11 @@ h2 {
 
 /* ---------- Home Page ---------- */
 .home-description {
-    text-align: center;
-    font-size: 15px;
-    color: #555;
-    max-width: 500px;
-    margin: 0 auto 25px;
-}
-
-/* ---------- Page Body Classes ---------- */
-body.home-page,
-body.admin-dashboard,
-body.admin-company,
-body.admin-job,
-body.admin-applications,
-body.student-dashboard,
-body.student-jobs,
-body.student-applications,
-body.student-interviews,
-body.admin-schedule {
-    /* Pages can override background via these classes if needed */
+  text-align: center;
+  font-size: 15px;
+  color: #555;
+  max-width: 500px;
+  margin: 0 auto 25px;
 }
 
 /* ---------- Footer Spacing ---------- */
