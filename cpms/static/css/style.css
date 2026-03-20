@@ -62,9 +62,14 @@ body.admin-job {
 }
 
 body.admin-applications {
-  background: url("../images/admin-applications.jpg") center/cover no-repeat fixed;
+  background: url("../images/admin-applications.jpg") center/cover no-repeat
+    fixed;
 }
 
+/* ---------- Page Body Classes ---------- */
+body.home-page {
+  background: url("../images/home.jpg") center/cover no-repeat fixed;
+}
 
 */ a {
   color: #2c3e50;
@@ -432,29 +437,17 @@ h2 {
 
 /* ---------- Action Links ---------- */
 .action-links {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 /* ---------- Home Page ---------- */
 .home-description {
-    text-align: center;
-    font-size: 15px;
-    color: #555;
-    max-width: 500px;
-    margin: 0 auto 25px;
-}
-
-/* ---------- Page Body Classes ---------- */
-body.home-page,
-body.admin-dashboard,
-body.admin-company,
-body.admin-job,
-body.admin-applications,
-body.student-dashboard,
-body.student-jobs,
-body.student-applications {
-    /* Pages can override background via these classes if needed */
+  text-align: center;
+  font-size: 15px;
+  color: #555;
+  max-width: 500px;
+  margin: 0 auto 25px;
 }
 
 /* ---------- Footer Spacing ---------- */
