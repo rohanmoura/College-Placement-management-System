@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <display-name>College Placement Management System</display-name>
+
+    <servlet>
+        <servlet-name>home</servlet-name>
+        <servlet-class>com.cpms.controller.HomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>home</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>register</servlet-name>
+        <servlet-class>com.cpms.controller.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>register</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>studentLogin</servlet-name>
+        <servlet-class>com.cpms.controller.StudentLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>studentLogin</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>adminLogin</servlet-name>
+        <servlet-class>com.cpms.controller.AdminLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adminLogin</servlet-name>
+        <url-pattern>/admin/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>com.cpms.controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>studentDashboard</servlet-name>
+        <servlet-class>com.cpms.controller.StudentDashboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>studentDashboard</servlet-name>
+        <url-pattern>/student/dashboard</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>studentJobs</servlet-name>
+        <servlet-class>com.cpms.controller.StudentJobsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>studentJobs</servlet-name>
+        <url-pattern>/student/jobs</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>applyJob</servlet-name>
+        <servlet-class>com.cpms.controller.ApplyJobServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>applyJob</servlet-name>
+        <url-pattern>/student/apply</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>studentApplications</servlet-name>
+        <servlet-class>com.cpms.controller.StudentApplicationsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>studentApplications</servlet-name>
+        <url-pattern>/student/applications</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>studentInterviews</servlet-name>
+        <servlet-class>com.cpms.controller.StudentInterviewsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>studentInterviews</servlet-name>
+        <url-pattern>/student/interviews</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>adminDashboard</servlet-name>
+        <servlet-class>com.cpms.controller.AdminDashboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adminDashboard</servlet-name>
+        <url-pattern>/admin/dashboard</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addCompany</servlet-name>
+        <servlet-class>com.cpms.controller.AddCompanyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addCompany</servlet-name>
+        <url-pattern>/admin/company/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addJob</servlet-name>
+        <servlet-class>com.cpms.controller.AddJobServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addJob</servlet-name>
+        <url-pattern>/admin/job/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>adminApplications</servlet-name>
+        <servlet-class>com.cpms.controller.AdminApplicationsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adminApplications</servlet-name>
+        <url-pattern>/admin/applications</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>updateStatus</servlet-name>
+        <servlet-class>com.cpms.controller.UpdateStatusServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateStatus</servlet-name>
+        <url-pattern>/admin/update-status</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>scheduleInterview</servlet-name>
+        <servlet-class>com.cpms.controller.ScheduleInterviewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>scheduleInterview</servlet-name>
+        <url-pattern>/admin/schedule</url-pattern>
+    </servlet-mapping>
+</web-app>
